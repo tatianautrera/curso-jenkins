@@ -14,6 +14,7 @@ pipeline{
         stage('Tests'){
             steps{
                 echo 'Running regresion Testes'
+                sh 'rm -f Gemfile.lock'
                 sh 'bundle exec cucumber -p ci'
             }
         }
