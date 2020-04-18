@@ -9,26 +9,19 @@ curso jenkins com capybara cucumber Rspec e Ruby
 "
 gem install bundle
 "
+
 ### Instalar as dependencias do Ruby (projeto)
 "
-
 bundle install
-
 "
 
 ### Executar localmente (minha maquina)
-
 "
-
 bundle exec cucumber
-
 "
 
 ### Executar no servidor de CI gerando o relatório json
-
 "
-
 bundle exec cucumber -p ci
-
 "
 
