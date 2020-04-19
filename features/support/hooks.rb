@@ -8,7 +8,7 @@ end
 
 After do |scenario|
   screenshot = page.save_screenshot("logs/screenshots/#{scenario.__id__}.png")
-  screenshot = Base64.encode64(File.open(temp_shot, 'rb').read)
+  screenshot = Base64.encode64(File.open(screenshot, 'rb').read)
   embed(screenshot, "image/png", "Screenshot")
 end
 
@@ -21,7 +21,7 @@ at_exit do
   ReportBuilder.configure do |config|
     config.input_path = "log/report.json"
     config.report_path = "log/"+ @current_date
-    config.report_types = [:html]
+    config.report_types = [:html, :json]
     config.report_title = "NinjaFlix - WebApp"
     config.compress_image = true
     config.additional_info = { "App" => "Web", "Data de execução" => @current_date }
